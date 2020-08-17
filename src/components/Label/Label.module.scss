@@ -8,6 +8,10 @@
   }
 }
 
+.root.rounded {
+  @apply rounded-full;
+}
+
 .root,
 .root.default {
   @apply text-#{vars.$defaultTextColor} bg-#{vars.$defaultBackgroundColor};
