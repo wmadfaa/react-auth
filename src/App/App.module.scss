@@ -1,0 +1,19 @@
+.root {
+  @apply text-gray-700 ;
+}
+
+.mainContainer {
+  @apply container mx-auto flex px-5 py-24 items-center justify-center flex-col;
+}
+
+.img {
+  @apply w-5/6 mb-10 object-cover object-center rounded;
+
+  @screen lg {
+    @apply w-2/6;
+  }
+
+  @screen md {
+    @apply w-3/6;
+  }
+}
