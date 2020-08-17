@@ -1,0 +1,26 @@
+@use "../../styles/vars.scss";
+
+.root {
+  @apply text-xs font-semibold inline-block py-1 px-2 uppercase rounded uppercase mr-1;
+
+  &:last-child {
+    @apply mr-0;
+  }
+}
+
+.root,
+.root.default {
+  @apply text-#{vars.$defaultTextColor} bg-#{vars.$defaultBackgroundColor};
+}
+
+@each $name, $color in vars.$variants {
+  .root.variant-#{$name} {
+    @apply text-#{$color}-600 bg-#{$color}-200;
+  }
+}
+
+@each $name, $color in vars.$status {
+  .root.status-#{$name} {
+    @apply text-#{$color}-600 bg-#{$color}-200;
+  }
+}
