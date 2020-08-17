@@ -1,0 +1,20 @@
+@use "sass:map";
+@use "sass:string";
+
+@function join-with($list, $separator: '-') {
+  $result: "";
+
+  @each $item in $list {
+    $result: $result + "#{$separator}#{$item}";
+  }
+
+  @if (string.length($result) > 0) {
+    $result: string.slice($result, 2, -1)
+  }
+
+  @return string.unquote($result);
+}
+
+@function join-map-with($list, $separator: '-') {
+  @return join-with(map.values($list));
+}

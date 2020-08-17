@@ -12,24 +12,24 @@ const Template: Story<LabelProps> = ({ children, ...rest }) => (
   <Label {...rest}>{children}</Label>
 );
 
-export const Default = Template.bind({});
+export const StandardLabel = Template.bind({});
 
-Default.argTypes = {
+StandardLabel.argTypes = {
   children: { control: { type: "text" } },
 };
 
-Default.args = {
+StandardLabel.args = {
   children: "label",
 };
 
-export const Rounded = Template.bind({});
+export const RoundedLabel = Template.bind({});
 
-Rounded.argTypes = {
-  ...Default.argTypes,
+RoundedLabel.argTypes = {
+  ...StandardLabel.argTypes,
   rounded: { control: { disable: true } },
 };
 
-Rounded.args = {
+RoundedLabel.args = {
   rounded: true,
   children: "rounded label",
 };
@@ -45,9 +45,9 @@ const VariantTemplate: Story<LabelProps> = (props) => (
   </div>
 );
 
-export const Variant = VariantTemplate.bind({});
+export const VariantLabel = VariantTemplate.bind({});
 
-Variant.argTypes = {
+VariantLabel.argTypes = {
   variant: { control: { disable: true } },
   children: { control: { disable: true } },
 };
@@ -72,5 +72,5 @@ const StatusTemplate: Story<LabelProps> = (props) => (
 export const Status = StatusTemplate.bind({});
 
 Status.argTypes = {
-  ...Variant.argTypes,
+  ...VariantLabel.argTypes,
 };

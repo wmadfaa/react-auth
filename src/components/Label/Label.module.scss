@@ -1,4 +1,5 @@
-@use "../../styles/vars.scss";
+@use "../../styles/vars";
+@use "../../styles/functions" as funcs;
 
 .root {
   @apply text-xs font-semibold inline-block py-1 px-2 uppercase rounded uppercase mr-1;
@@ -14,7 +15,7 @@
 
 .root,
 .root.default {
-  @apply text-#{vars.$defaultTextColor} bg-#{vars.$defaultBackgroundColor};
+  @apply text-#{funcs.join-map-with(vars.$defaultTextColor)} bg-#{funcs.join-map-with(vars.$defaultBackgroundColor)};
 }
 
 @each $name, $color in vars.$variants {

@@ -1,0 +1,63 @@
+@use "../../styles/vars";
+@use "../../styles/mixins";
+@use "./Button.mixins" as btn-mixins;
+
+.root {
+  @apply rounded shadow outline-none font-bold uppercase text-sm px-4 py-2 m-1;
+
+  @include mixins.base-transition;
+
+  &:hover {
+    @apply shadow-lg;
+  }
+
+  &:focus {
+    @apply outline-none;
+  }
+}
+
+.root.rounded {
+  @apply rounded-full;
+}
+
+.root.fullwidth {
+  @apply w-full;
+}
+
+.root.sm {
+  @apply text-xs px-4 py-2;
+
+  &:hover {
+    @apply shadow-md;
+  }
+}
+
+.root.lg {
+  @apply text-base px-6 py-3;
+
+  &:hover {
+    @apply shadow-xl;
+  }
+}
+
+.root,
+.root.default {
+  $color: map-get(vars.$defaultBackgroundColor, color);
+  $level: map-get(vars.$defaultBackgroundColor, level);
+  $text-color: map-get(vars.$defaultTextColor, color);
+  $text-level: map-get(vars.$defaultTextColor, level);
+
+  @include btn-mixins.theme($color,$level,$text-color,$text-level);
+}
+
+@each $name, $color in vars.$variants {
+  .root.variant-#{$name} {
+    @include btn-mixins.theme($color);
+  }
+}
+
+@each $name, $color in vars.$status {
+  .root.status-#{$name} {
+    @include btn-mixins.theme($color);
+  }
+}

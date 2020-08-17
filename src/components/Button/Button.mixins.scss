@@ -1,0 +1,29 @@
+@mixin theme($color, $level: 500, $text-color: null, $text-level: null) {
+  @if ($text-color == null) {
+    $text-color: $color;
+  }
+
+  @if ($text-level == null) {
+    $text-level: $level;
+  }
+
+  @apply text-white bg-#{$color}-#{$level};
+
+  &:hover,
+  &:focus {
+    @apply bg-#{$color}-#{$level + 100};
+  }
+
+  &.outline {
+    @apply text-#{$color}-#{$level} bg-transparent border border-solid border-#{$color}-#{$level};
+
+    &:hover,
+    &:focus {
+      @apply bg-#{$color}-#{$level} text-white;
+    }
+
+    &:focus {
+      @apply outline-none;
+    }
+  }
+}

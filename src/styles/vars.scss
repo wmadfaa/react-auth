@@ -1,5 +1,5 @@
-$defaultTextColor: "gray-100";
-$defaultBackgroundColor: "gray-800";
+$defaultTextColor: (color: "gray", level: 100);
+$defaultBackgroundColor: (color: "gray", level: 800);
 
 $variants: ( primary: "pink", secondary: "gray");
 $status: (info: "blue", success: "green", warning: "yellow", danger: "red");
