@@ -1,0 +1,11 @@
+.root {
+  @apply absolute w-full h-full;
+}
+
+.wrapper {
+  @apply mx-auto px-4 h-full;
+}
+
+.content {
+  @apply flex content-center items-center justify-center h-full;
+}

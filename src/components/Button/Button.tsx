@@ -12,6 +12,7 @@ export interface ButtonProps
   size?: SizesType;
   rounded?: boolean;
   fullwidth?: boolean;
+  noMargin?: boolean;
   className?: string;
   type?: "button" | "submit" | "reset";
   children?: React.ReactNode;
@@ -26,6 +27,7 @@ const Button: React.FC<ButtonProps> = (props) => {
     size,
     rounded,
     fullwidth,
+    noMargin,
     ...rest
   } = props;
 
@@ -36,6 +38,7 @@ const Button: React.FC<ButtonProps> = (props) => {
     size && styles[size],
     { [styles.fullwidth]: fullwidth },
     { [styles.rounded]: rounded },
+    { [styles.noMargin]: noMargin },
     className
   );
 

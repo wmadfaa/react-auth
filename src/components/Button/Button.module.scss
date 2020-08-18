@@ -3,7 +3,7 @@
 @use "./Button.mixins" as btn-mixins;
 
 .root {
-  @apply rounded shadow outline-none font-bold uppercase text-sm px-4 py-2 m-1;
+  @apply rounded shadow outline-none font-bold uppercase text-sm px-4 py-3 m-1;
 
   @include mixins.base-transition;
 
@@ -14,6 +14,10 @@
   &:focus {
     @apply outline-none;
   }
+}
+
+.root.noMargin {
+  @apply m-0;
 }
 
 .root.rounded {
