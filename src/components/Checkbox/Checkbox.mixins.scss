@@ -3,7 +3,7 @@
     @apply text-#{$color}-#{$level} border-#{$color}-300;
 
     &:hover {
-      @apply border-#{$color}-400;
+      @apply border-#{$color}-500;
     }
   }
 

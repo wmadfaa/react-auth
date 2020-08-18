@@ -4,6 +4,7 @@ import Button from "../../../../components/Button/Button";
 import styles from "./SignInForm.module.scss";
 import Input from "../../../../components/Input/Input";
 import Checkbox from "../../../../components/Checkbox/Checkbox";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export interface SignInFormProps {}
 
@@ -16,8 +17,12 @@ const SignInForm: React.FC<SignInFormProps> = (props) => {
             <h6 className={styles.socialMediaTitle}>Sign in with</h6>
           </div>
           <div className={styles.socialMediaButtons}>
-            <Button size="sm">Github</Button>
-            <Button size="sm">Google</Button>
+            <Button size="sm">
+              <FontAwesomeIcon icon={["fab", "github"]} /> Github
+            </Button>
+            <Button size="sm">
+              <FontAwesomeIcon icon={["fab", "google"]} /> Google
+            </Button>
           </div>
           <hr className={styles.hr} />
         </section>
