@@ -1,0 +1,9 @@
+@mixin theme ($color, $level: 500,) {
+  .input {
+    @apply text-#{$color}-#{$level};
+  }
+
+  .label {
+    @apply text-#{$color}-#{$level + 100};
+  }
+}

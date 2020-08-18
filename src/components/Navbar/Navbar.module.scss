@@ -19,7 +19,7 @@
 }
 
 .main {
-  @apply w-full relative flex justify-between;
+  @apply w-full relative flex items-center  justify-between;
 
   @screen lg {
     @apply w-auto static block justify-start;

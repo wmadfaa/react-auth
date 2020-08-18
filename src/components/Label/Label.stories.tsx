@@ -72,5 +72,6 @@ const StatusTemplate: Story<LabelProps> = (props) => (
 export const Status = StatusTemplate.bind({});
 
 Status.argTypes = {
-  ...VariantLabel.argTypes,
+  status: { control: { disable: true } },
+  children: { control: { disable: true } },
 };

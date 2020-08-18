@@ -1,0 +1,54 @@
+@use "../../styles/mixins";
+@use "../../styles/vars";
+@use "./Input.mixins" as InputMixins;
+
+.root {
+  @apply relative mb-4;
+}
+
+.label {
+  @apply block uppercase text-xs font-bold mb-1 text-gray-700;
+}
+
+.input {
+  @apply p-3 text-sm w-full border  border-gray-300;
+
+  @include mixins.base-transition;
+
+  &:hover {
+    @apply border-gray-500;
+  }
+
+  &:focus {
+    @apply outline-none shadow-none  border-blue-700;
+  }
+}
+
+.root.fullwidth {
+  @apply w-full;
+}
+
+.root.rounded .input {
+  @apply rounded-full;
+}
+
+.hint {
+  @apply text-xs italic my-1;
+}
+
+.root,
+.root.default {
+  @include InputMixins.theme(map-get(vars.$defaultTextColor, 'color'));
+}
+
+@each $name, $color in vars.$variants {
+  .root.variant-#{$name} {
+    @include InputMixins.theme($color);
+  }
+}
+
+@each $name, $color in vars.$status {
+  .root.status-#{$name} {
+    @include InputMixins.theme($color);
+  }
+}

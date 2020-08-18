@@ -1,0 +1,32 @@
+@use "../../styles/vars";
+@use "../../styles/functions" as funcs;
+@use "./Checkbox.mixins" as CheckboxMixins;
+
+.root {
+  @apply inline-flex items-center cursor-pointer mr-4;
+}
+
+.input {
+  @apply w-5 h-5;
+}
+
+.label {
+  @apply ml-2 text-sm font-semibold;
+}
+
+.root,
+.root.default {
+  @include CheckboxMixins.theme(map-get(vars.$defaultTextColor, 'color'), 800);
+}
+
+@each $name, $color in vars.$variants {
+  .root.variant-#{$name} {
+    @include CheckboxMixins.theme($color);
+  }
+}
+
+@each $name, $color in vars.$status {
+  .root.status-#{$name} {
+    @include CheckboxMixins.theme($color);
+  }
+}

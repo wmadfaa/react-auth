@@ -2,6 +2,8 @@ import React from "react";
 import Button from "../../../../components/Button/Button";
 
 import styles from "./SignInForm.module.scss";
+import Input from "../../../../components/Input/Input";
+import Checkbox from "../../../../components/Checkbox/Checkbox";
 
 export interface SignInFormProps {}
 
@@ -24,47 +26,15 @@ const SignInForm: React.FC<SignInFormProps> = (props) => {
             <small>Or sign in with credentials</small>
           </div>
           <form>
-            <div className="relative w-full mb-4">
-              <label
-                className="block uppercase text-gray-700 text-xs font-bold mb-2"
-                htmlFor="grid-password"
-              >
-                Email
-              </label>
-              <input
-                type="email"
-                className="form-input p-3 text-sm shadow w-full border-none focus:outline-none focus:shadow-outline"
-                placeholder="Email"
-                style={{ transition: "all .15s ease" }}
-              />
-            </div>
+            <Input id="email" label="Email" placeholder="Email" type="email" />
+            <Input
+              id="password"
+              label="Password"
+              placeholder="Password"
+              type="password"
+            />
 
-            <div className="relative w-full mb-4">
-              <label
-                className="block uppercase text-gray-700 text-xs font-bold mb-2"
-                htmlFor="grid-password"
-              >
-                Password
-              </label>
-              <input
-                type="password"
-                className="form-input p-3 text-sm shadow w-full border-none focus:outline-none focus:shadow-outline"
-                placeholder="Password"
-                style={{ transition: "all .15s ease" }}
-              />
-            </div>
-
-            <label className="inline-flex items-center cursor-pointer">
-              <input
-                id="customCheckLogin"
-                type="checkbox"
-                className="form-checkbox text-gray-800 w-5 h-5"
-                style={{ transition: "all .15s ease" }}
-              />
-              <span className="ml-2 text-sm font-semibold text-gray-700">
-                Remember me
-              </span>
-            </label>
+            <Checkbox id="RememberMeCheck" label="Remember me" />
 
             <div className={styles.formActionButtons}>
               <Button fullwidth noMargin>

@@ -1,0 +1,13 @@
+@mixin theme ($color) {
+  .input {
+    @apply border-#{$color}-300;
+
+    &:hover {
+      @apply border-#{$color}-500;
+    }
+  }
+
+  .hint {
+    @apply text-#{$color}-700;
+  }
+}
