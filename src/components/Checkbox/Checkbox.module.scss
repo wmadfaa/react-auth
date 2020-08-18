@@ -1,3 +1,4 @@
+@use "../../styles/mixins";
 @use "../../styles/vars";
 @use "../../styles/functions" as funcs;
 @use "./Checkbox.mixins" as CheckboxMixins;
@@ -7,16 +8,24 @@
 }
 
 .input {
-  @apply w-5 h-5;
+  @apply w-5 h-5 border;
+
+  @include mixins.base-transition;
+
+  &:focus {
+    @apply outline-none shadow-none  border-blue-700;
+  }
 }
 
 .label {
   @apply ml-2 text-sm font-semibold;
+
+  @include mixins.base-transition;
 }
 
 .root,
 .root.default {
-  @include CheckboxMixins.theme(map-get(vars.$defaultTextColor, 'color'), 800);
+  @include CheckboxMixins.theme(map-get(vars.$defaultTextColor, 'color'), 700);
 }
 
 @each $name, $color in vars.$variants {

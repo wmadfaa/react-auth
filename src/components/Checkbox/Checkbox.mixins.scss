@@ -1,9 +1,18 @@
 @mixin theme ($color, $level: 500,) {
   .input {
-    @apply text-#{$color}-#{$level};
+    @apply text-#{$color}-#{$level} border-#{$color}-300;
+
+    &:hover {
+      @apply border-#{$color}-400;
+    }
   }
 
   .label {
     @apply text-#{$color}-#{$level + 100};
+
+    &:hover,
+    &:focus {
+      @apply text-#{$color}-#{$level + 200};
+    }
   }
 }
