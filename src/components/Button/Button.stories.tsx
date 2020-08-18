@@ -19,7 +19,7 @@ Standard.argTypes = {
 };
 
 Standard.args = {
-  children: "label",
+  children: "button",
 };
 
 export const Rounded = Template.bind({});
@@ -31,7 +31,7 @@ Rounded.argTypes = {
 
 Rounded.args = {
   rounded: true,
-  children: "rounded label",
+  children: "rounded button",
 };
 
 const SizesTemplate: Story<ButtonProps> = (props) => (

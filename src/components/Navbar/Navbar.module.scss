@@ -1,0 +1,139 @@
+@use "../../styles/mixins";
+
+.root {
+  @apply flex flex-wrap items-center justify-between px-2 py-3;
+
+  @include mixins.base-transition;
+
+  &.solid {
+    @apply relative shadow-lg bg-white shadow-lg;
+  }
+
+  &.transparent {
+    @apply top-0 absolute z-50 w-full;
+  }
+}
+
+.wrapper {
+  @apply px-4 mx-auto flex flex-wrap items-center justify-between;
+}
+
+.main {
+  @apply w-full relative flex justify-between;
+
+  @screen lg {
+    @apply w-auto static block justify-start;
+  }
+}
+
+.brand {
+  @apply text-sm font-bold leading-relaxed inline-block mr-4 py-2 whitespace-no-wrap uppercase;
+}
+
+.toggleMenuButton {
+  @apply cursor-pointer text-xl leading-none mx-3 my-1 border border-solid border-transparent rounded bg-transparent block outline-none;
+
+  &:focus {
+    @apply outline-none;
+  }
+
+  @screen lg {
+    @apply hidden;
+  }
+}
+
+.menu {
+  @apply flex-grow items-center bg-white hidden;
+
+  @screen lg {
+    @apply flex bg-transparent shadow-none;
+  }
+
+  &.isOpen {
+    @apply block rounded shadow-lg;
+  }
+}
+
+.menu .list {
+  @apply flex flex-col list-none;
+
+  @screen lg {
+    @apply flex-row ml-auto;
+  }
+
+  & .listItem {
+    @apply flex items-center;
+
+    & .link {
+      @apply px-3 py-4 flex items-center text-xs uppercase font-bold;
+
+      & .icon {
+        @apply text-lg leading-relaxed;
+      }
+
+      & .label {
+        @apply inline-block ml-2;
+
+        @include mixins.base-transition;
+      }
+
+      @screen lg {
+        @apply py-2;
+
+        & .icon {
+          @apply hidden;
+        }
+      }
+    }
+  }
+}
+
+.solid {
+  & .brand,
+  & .toggleMenuButton {
+    @apply text-gray-800;
+  }
+
+  & .menu .list .listItem .link {
+    @apply text-gray-800;
+
+    &:hover {
+      @apply text-gray-600;
+    }
+
+    & .icon {
+      @apply text-gray-500;
+    }
+  }
+}
+
+.transparent {
+  & .brand,
+  & .toggleMenuButton {
+    @apply text-white;
+  }
+
+  & .menu .list .listItem .link {
+    @apply text-gray-800;
+
+    &:hover {
+      @apply text-gray-600;
+    }
+
+    & .icon {
+      @apply text-gray-500;
+    }
+
+    @screen lg {
+      @apply text-white;
+
+      &:hover {
+        @apply text-gray-300;
+      }
+
+      & .icon {
+        @apply text-gray-300;
+      }
+    }
+  }
+}
