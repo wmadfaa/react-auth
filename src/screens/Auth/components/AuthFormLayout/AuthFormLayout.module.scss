@@ -1,0 +1,39 @@
+.root {
+  @apply relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-gray-100 border-0;
+}
+
+.socialMediaSection {
+  @apply rounded-t mb-0 px-6 py-6;
+
+  .socialMediaHeader {
+    @apply text-center mb-3;
+  }
+
+  .socialMediaTitle {
+    @apply text-gray-600 text-sm font-bold;
+
+    &.socialMediaLargeTitle {
+      @apply text-gray-700 text-xl;
+    }
+  }
+
+  .socialMediaButtons {
+    @apply text-center;
+  }
+
+  .hr {
+    @apply mt-6 border-b border-gray-400;
+  }
+}
+
+.formSection {
+  @apply flex-auto px-3 py-10 pt-0;
+
+  @screen lg {
+    @apply px-10;
+  }
+
+  .formHeader {
+    @apply text-gray-500 text-center mb-3 font-bold;
+  }
+}

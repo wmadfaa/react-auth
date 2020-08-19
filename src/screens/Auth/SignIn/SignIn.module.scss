@@ -9,3 +9,31 @@
 .content {
   @apply flex content-center items-center justify-center h-full;
 }
+
+.formContainer {
+  @apply w-full px-4;
+
+  @screen lg {
+    @apply w-4/12;
+  }
+}
+
+.otherActions {
+  @apply flex flex-wrap mt-6;
+
+  .otherAction {
+    @apply w-1/2;
+
+    &:nth-child(2) {
+      @apply text-right;
+    }
+
+    .actionLink {
+      @apply text-gray-300 font-bold;
+
+      &:hover {
+        @apply text-gray-100;
+      }
+    }
+  }
+}
