@@ -10,7 +10,7 @@
   }
 
   &.transparent {
-    @apply top-0 absolute z-50 w-full;
+    @apply absolute inset-x-0 top-0 z-50 w-full;
   }
 }
 

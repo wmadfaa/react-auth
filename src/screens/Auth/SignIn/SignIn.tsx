@@ -1,5 +1,6 @@
 import React from "react";
-import classNames from "classnames";
+
+import { AuthFormDecorator } from "../components/AuthDecorators/AuthDecorators";
 
 import AuthFormLayout from "../components/AuthFormLayout/AuthFormLayout";
 import SignInForm from "../components/SignInForm/SignInForm";
@@ -11,35 +12,33 @@ const SignIn: React.FC = () => {
   const handleSignInWithGoogle = () => {};
 
   return (
-    <div className={styles.root}>
-      <div className={classNames(styles.wrapper, "container")}>
-        <div className={styles.content}>
-          <div className={styles.formContainer}>
-            <AuthFormLayout
-              title="Sign in with"
-              secondaryTitle="Or sign in with credentials"
-              withSocialMediaButtons
-              onGithubActionClick={handleSignInWithGithub}
-              onGoogleActionClick={handleSignInWithGoogle}
-            >
-              <SignInForm />
-            </AuthFormLayout>
-            <section className={styles.otherActions}>
-              <div className={styles.otherAction}>
-                <a href="#pablo" className={styles.actionLink}>
-                  <small>Forgot password?</small>
-                </a>
-              </div>
-              <div className={styles.otherAction}>
-                <a href="#pablo" className={styles.actionLink}>
-                  <small>Create new account</small>
-                </a>
-              </div>
-            </section>
-          </div>
-        </div>
+    <>
+      <div className={styles.root}>
+        <AuthFormDecorator>
+          <AuthFormLayout
+            title="Sign in with"
+            secondaryTitle="Or sign in with credentials"
+            withSocialMediaButtons
+            onGithubActionClick={handleSignInWithGithub}
+            onGoogleActionClick={handleSignInWithGoogle}
+          >
+            <SignInForm />
+          </AuthFormLayout>
+          <section className={styles.otherActions}>
+            <div className={styles.otherAction}>
+              <a href="#pablo" className={styles.actionLink}>
+                <small>Forgot password?</small>
+              </a>
+            </div>
+            <div className={styles.otherAction}>
+              <a href="#pablo" className={styles.actionLink}>
+                <small>Create new account</small>
+              </a>
+            </div>
+          </section>
+        </AuthFormDecorator>
       </div>
-    </div>
+    </>
   );
 };
 

@@ -1,0 +1,15 @@
+.root {
+  @apply mx-auto px-4 h-full;
+}
+
+.content {
+  @apply flex content-center items-center justify-center h-full;
+}
+
+.formContainer {
+  @apply w-full px-4;
+
+  @screen lg {
+    @apply w-4/12;
+  }
+}

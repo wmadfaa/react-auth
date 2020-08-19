@@ -1,7 +1,9 @@
 import React from "react";
 import { Meta, Story } from "@storybook/react";
 import AuthFormLayout, { SignInFormProps } from "./AuthFormLayout";
+import { AuthFormDecorator } from "../AuthDecorators/AuthDecorators";
 import SignInForm from "../SignInForm/SignInForm";
+import SignUpForm from "../SignUpForm/SignUpForm";
 
 export default {
   title: "Base Components/AuthFormLayout",
@@ -9,7 +11,7 @@ export default {
   decorators: [
     (story) => (
       <div className="bg-gray-900 w-full h-full items-center flex justify-center">
-        {story()}
+        <AuthFormDecorator>{story()}</AuthFormDecorator>
       </div>
     ),
   ],
@@ -22,6 +24,7 @@ const COMPONENT_CHOICES = {
     </h6>
   ),
   signIn: SignInForm,
+  signUp: SignUpForm,
 };
 
 interface TemplateProps extends SignInFormProps {
@@ -34,9 +37,9 @@ const Template: Story<TemplateProps> = ({ children, ...props }) => (
   </AuthFormLayout>
 );
 
-export const StandardSignInForm = Template.bind({});
+export const Standard = Template.bind({});
 
-StandardSignInForm.argTypes = {
+Standard.argTypes = {
   title: {
     control: { type: "text" },
   },
@@ -51,7 +54,7 @@ StandardSignInForm.argTypes = {
   },
 };
 
-StandardSignInForm.args = {
+Standard.args = {
   title: "Sign in with",
   secondaryTitle: "Or sign in with credentials",
   children: "empty",
